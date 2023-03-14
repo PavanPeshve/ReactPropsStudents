@@ -1,14 +1,18 @@
-import React from 'react'
-import JSON from './studentdetail.json'
-import Allstudents from './Allstudents.jsx'
-import './global.css'
-
-const App = () => {
-  return (
-    <>
-    <Allstudents details={JSON}/>
-    </>
-  )
+import React, { Component } from 'react'
+import studentDetails from './studentdetail.json'
+import Allstudents from './Allstudents.jsx';
+export default class App extends Component {
+  constructor(){
+    super()
+    this.state={
+      json:studentDetails
+    }
+  }
+  render() {
+    return (
+      <>
+      <Allstudents data={this.state.json}/>
+      </>
+    )
+  }
 }
-
-export default App
